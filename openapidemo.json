@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "/v1"
+      "url": "http://localhost:7878/v1"
     }
   ],
   "paths": {
