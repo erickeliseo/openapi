@@ -1,33 +1,49 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui-mock-deployment
+  name: mock-deployment
   labels:
-    app: ui-mock-deployment
+    app: mock-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ui-mock-deployment
+      app: mock-deployment
   template:
     metadata:
       labels:
-        app: ui-mock-deployment
+        app: mock-deployment
+    spec:
+      containers:
+        name: openapi-mock
+        image: muonsoft/openapi-mock
+        env:
+          - name: OPENAPI_MOCK_SPECIFICATION_URL
+            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/openapidemo.json"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-deployment
+  labels:
+    app: ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-deployment
+  template:
+    metadata:
+      labels:
+        app: ui-deployment
     spec:
       containers:
       - name: swagger-ui
         image: swaggerapi/swagger-ui
         env:
           - name: SWAGGER_JSON_URL
-            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/openapidemo.json"
-          - name: PORT
-            value: 8181
-        ports:
-        - containerPort: 8181
-        name: openapi-mock
-        image: muonsoft/openapi-mock
-        env:
-          - name: OPENAPI_MOCK_SPECIFICATION_URL
             value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/openapidemo.json"
         ports:
         - containerPort: 8080
