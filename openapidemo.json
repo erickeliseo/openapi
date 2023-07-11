@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:7878/v1"
+      "url": "http://mock-api-first.apps.ocp4-test.itmlabs.io/v1"
     }
   ],
   "paths": {
