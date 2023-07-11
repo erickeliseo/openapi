@@ -23,7 +23,7 @@ spec:
             name: PORT
             value: 8181
         ports:
-        - containerPort: 8080
+        - containerPort: 8181
         name: openapi-mock
         image: muonsoft/openapi-mock
         env:
