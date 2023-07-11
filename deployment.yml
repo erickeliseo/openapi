@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui-mock-deployment
+  labels:
+    app: ui-mock-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ui-mock-deployment
+  template:
+    metadata:
+      labels:
+        app: ui-mock-deployment
+    spec:
+      containers:
+      - name: swagger-ui
+        image: swaggerapi/swagger-ui
+        ports:
+        - containerPort: 8080
+        name: openapi-mock
+        image: muonsoft/openapi-mock
+        ports:
+        - containerPort: 8080
