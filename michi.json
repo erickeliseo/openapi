@@ -38,7 +38,6 @@ paths:
           description: Usuario creado exitosamente
         '400':
           description: Error en la solicitud
-
   /products:
     get:
       summary: Obtiene la lista de productos
