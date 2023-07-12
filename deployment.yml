@@ -72,7 +72,7 @@ spec:
         image: muonsoft/openapi-mock
         env:
           - name: OPENAPI_MOCK_SPECIFICATION_URL
-            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/michi.json"
+            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/oas3demo.json"
         ports:
         - containerPort: 8080
 ---
@@ -97,7 +97,7 @@ spec:
         image: swaggerapi/swagger-ui
         env:
           - name: SWAGGER_JSON_URL
-            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/michi.json"
+            value: "https://raw.githubusercontent.com/erickeliseo/openapi/main/oas3demo.json"
         ports:
         - containerPort: 8080
 ---
