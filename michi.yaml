@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Mock API
+  description: Ejemplo de API de Mock
+  version: 1.0.0
+
+paths:
+  /mock:
+    get:
+      summary: Obtener datos de ejemplo
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ¡Hola desde el Mock API!
